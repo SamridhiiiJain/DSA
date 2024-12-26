@@ -1,21 +1,37 @@
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& numbers, int target) {
-        vector<int> ans;
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int Segregate0and1(vector<int>& arr) {
         int start=0;
-        int end=numbers.size()-1;
+        int end=arr.size()-1;
         while(start<end)
         {
-            if(numbers[start]+numbers[end]==target)
+            if(arr[start]==0)
             {
-               ans.push_back(start+1);
-               ans.push_back(end+1);
-               return ans;
+               start++;
             }
-            else if(numbers[start]+numbers[end]<target)                    
-            start++;
+            else 
+            {
+                if(arr[end]==0){
+                    swap(arr[start],arr[end]);
+                    start++;
+                    end--;
+                }                    
             else
             end--;
+          }
         }
-        return ans;
+}
+
+
+ int main()
+ {
+    vector<int> arr={1,0,1,0,0,1,1,0,0};
+    Segregate0and1(arr);
+    for(int i=0;i<arr.size();i++){
+        cout<<arr[i];
     }
+    return 0;
+ }
+   
