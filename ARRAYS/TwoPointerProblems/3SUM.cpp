@@ -11,11 +11,11 @@ using namespace std;
            int end=n-1;
            while(start < end)
         {
-            if(numbers[start]+numbers[end]==target)
+            if(numbers[start]+numbers[end]==ans)
             {
                return 1;
             }
-            else if(numbers[start]+numbers[end]<target)                    
+            else if(numbers[start]+numbers[end]<ans)                    
             start++;
             else
             end--;
