@@ -13,7 +13,7 @@ int nthRoot(int n, int m) {
         long long power = 1;
         for (int i = 0; i < n; ++i) {
             power *= mid;
-            if (power > m) break; 
+          //  if (power > m) break; 
         }
 
         if (power == m) {
