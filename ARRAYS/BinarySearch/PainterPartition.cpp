@@ -24,7 +24,6 @@ int partition(vector<int> arr, int m)
     int n =arr.size();
     sort(arr.begin(),arr.end());
     int start,sum=0,end,mid,ans,Max=INT_MIN;
-    start=arr[n-1];
     for(int i=0;i<arr.size();i++)
     {
         sum+=arr[i];
