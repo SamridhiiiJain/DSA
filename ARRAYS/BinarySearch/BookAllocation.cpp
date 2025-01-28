@@ -15,8 +15,10 @@ bool isPossible(vector<int> &arr, int m, int n, int maxAllowedPages)
        {
        pages+=arr[i];
        }
+       else{
        student++;
        pages=arr[i];
+       }
    }
    return  student > m ? false : true ;
 }
