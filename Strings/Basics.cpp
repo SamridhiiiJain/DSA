@@ -1,4 +1,4 @@
-// Online C++ compiler to run C++ program online
+// character array in c++
 #include <iostream>
 #include <cstring>
 using namespace std;
