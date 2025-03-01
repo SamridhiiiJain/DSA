@@ -1,21 +1,31 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<unordered_map>
+
 using namespace std;
 
-bool isIsomorphic(string s, string t) {
-    if (s.length() != t.length()) 
+bool isIsomorphic(string s1, string s2) {
+    if (s1.length() != s2.length()) 
         return false;
 
-    int sMap[256] = {0};  // Stores mapping of s[i] to t[i]
-    int tMap[256] = {0};  // Stores mapping of t[i] to s[i]
+        unordered_map<char, int> m1, m2;
 
-    for (int i = 0; i < s.length(); i++) {
-        if (sMap[s[i]] != tMap[t[i]]) 
-            return false;
-
-        sMap[s[i]] = i + 1;  // Store index + 1 to avoid conflict with default 0
-        tMap[t[i]] = i + 1;
+        for (int i = 0; i < s1.length(); i++) {
+          
+            // If character not seen before, store its 
+            // first occurrence index
+            if (m1.find(s1[i]) == m1.end()) {
+                m1[s1[i]] = i;
+            }
+            if (m2.find(s2[i]) == m2.end()) {
+                m2[s2[i]] = i;
+            }
+    
+            // Check if the first occurrence indices match
+            if (m1[s1[i]] != m2[s2[i]]) {
+                return false;
+            }
+        }
+        return true;
     }
-    return true;
-}
