@@ -1,3 +1,9 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
 string largestOddNumber(string num) {
     for(int i=num.size()-1;i>=0;i--)
     {

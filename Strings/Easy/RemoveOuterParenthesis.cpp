@@ -1,3 +1,9 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+
+using namespace std;
 string removeOuterParentheses(string s) {
     int count=0;
     string ans="";
