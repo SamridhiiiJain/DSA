@@ -1,3 +1,9 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+
 int findPlatform(vector<int>& arr, vector<int>& dep) {
     int ans;
     int n = arr.size();
@@ -10,6 +16,7 @@ int findPlatform(vector<int>& arr, vector<int>& dep) {
         {
             count++;
             ans=max(ans,count);
+            i++;
         }
         else if(arr[i]>dep[j])
         {
